@@ -17,8 +17,18 @@ Output: 6
 
 '''
 
+##Code
 def sum_of_elements_whose_freq_is_greater_than_self(nums):
-    print("hello naveen")
+    the_dict = {}
+    to_return = 0
+    for num in nums:
+        the_dict[num] = the_dict.get(num, 0) + 1
+    for num in the_dict:    
+        if the_dict[num] >= num:
+            to_return += num
+    return to_return
 
-sum_of_elements_whose_freq_is_greater_than_self([])
+##Test
+print(sum_of_elements_whose_freq_is_greater_than_self([1, 2, 3, 3, 2, 3, 2, 3, 3]) == 6)
+print(sum_of_elements_whose_freq_is_greater_than_self([1, 2, 2, 3, 2]) == 3)
 
